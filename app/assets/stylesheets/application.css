@@ -11,5 +11,13 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap
  *= require_self
  */
+
+@import "bootstrap.css";
+
+body {
+  max-width: 960px;
+  margin: auto;
+}

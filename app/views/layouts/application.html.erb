@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Marketplace- Final Project</title>
+  <title>Marketplace - Final Project</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stripe_javascript_tag %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- Notification / Alert from Devise -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <!-- end of Notification / Alert -->
 
-<%= yield %>
+
+  <%= button_to "Home", root_path, :method => 'get', :class => 'btn btn-primary' %>
+  <!-- UserView (buttons & username) -->
+  <div id="userViewContainer">
+    <% if user_signed_in? %>
+      <div class="user_view text-center">
+        <h4><%= current_user.username %></h4>
+        <%= button_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => 'btn btn-primary' %>
+
+        <% if current_user.admin? %>
+          <%= button_to "Add Product", new_product_path, :method => 'get', :class => 'btn btn-primary' %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="guest_view text-center">
+        <%= button_to "Sign up", new_user_registration_path, :method => 'get', :class => 'btn btn-primary' %>
+        <%= button_to "Sign in", new_user_session_path, :method => 'get', :class => 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+  <!-- end of UserView -->
+
+  <!-- Yield Container -->
+  <div class="yield_container">
+    <%= yield %>
+  </div>
+  <!-- End of Yield Container -->
+
 
 </body>
 </html>
