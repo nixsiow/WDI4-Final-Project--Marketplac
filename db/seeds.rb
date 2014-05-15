@@ -2,6 +2,7 @@
 User.destroy_all
 Order.destroy_all
 Product.destroy_all
+OrderProduct.destroy_all
 
 #----------------------------------------------------
 
@@ -36,25 +37,25 @@ order12 = admin01.orders.create
 #----------------------------------------------------
 
 # product's seed file
-product01 = Product.create(:title => 'Item01', :price => 10.50, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product01 = Product.create(:title => 'Item01', :price => 10.50, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product02 = Product.create(:title => 'Item02', :price => 10.90, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product02 = Product.create(:title => 'Item02', :price => 10.90, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product03 = Product.create(:title => 'Item03', :price => 20.20, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product03 = Product.create(:title => 'Item03', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product04 = Product.create(:title => 'Item04', :price => 9.80, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product04 = Product.create(:title => 'Item04', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product05 = Product.create(:title => 'Item05', :price => 10.50, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product05 = Product.create(:title => 'Item05', :price => 10.50, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product06 = Product.create(:title => 'Item06', :price => 10.90, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product06 = Product.create(:title => 'Item06', :price => 10.90, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product07 = Product.create(:title => 'Item07', :price => 20.20, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product07 = Product.create(:title => 'Item07', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product08 = Product.create(:title => 'Item08', :price => 9.80, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product08 = Product.create(:title => 'Item08', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product09 = Product.create(:title => 'Item09', :price => 20.20, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product09 = Product.create(:title => 'Item09', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
-product10 = Product.create(:title => 'Item10', :price => 9.80, :description => 'some text', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
+product10 = Product.create(:title => 'Item10', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'http://lorempixel.com/250/360/', :stock => 10)
 
 #----------------------------------------------------
 

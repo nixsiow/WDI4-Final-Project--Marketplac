@@ -7,40 +7,99 @@
   <%= stripe_javascript_tag %>
   <%= csrf_meta_tags %>
 </head>
+
+<header>
+  <!-- Bootstrap nav bar start here -->
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Marketplace</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.username, root_path %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
+
+            <% if current_user.admin? %>
+              <li><%= link_to "Add Product", new_product_path %></li>
+            <% end %>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+
+
+
+
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <!-- Bootstrap nav bar ending -->
+</header>
+
 <body>
-  <!-- Notification / Alert from Devise -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <!-- end of Notification / Alert -->
+  <div class="site_container">
+    <!-- Notification / Alert from Devise -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <!-- end of Notification / Alert -->
 
 
-  <%= button_to "Home", root_path, :method => 'get', :class => 'btn btn-primary' %>
-  <!-- UserView (buttons & username) -->
-  <div id="userViewContainer">
-    <% if user_signed_in? %>
-      <div class="user_view text-center">
-        <h4><%= current_user.username %></h4>
-        <%= button_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => 'btn btn-primary' %>
+    <!-- Yield Container -->
+    <div class="yield_container">
+      <%= yield %>
+    </div>
+    <!-- End of Yield Container -->
 
-        <% if current_user.admin? %>
-          <%= button_to "Add Product", new_product_path, :method => 'get', :class => 'btn btn-primary' %>
-        <% end %>
-      </div>
-    <% else %>
-      <div class="guest_view text-center">
-        <%= button_to "Sign up", new_user_registration_path, :method => 'get', :class => 'btn btn-primary' %>
-        <%= button_to "Sign in", new_user_session_path, :method => 'get', :class => 'btn btn-primary' %>
-      </div>
-    <% end %>
-  </div>
-  <!-- end of UserView -->
-
-  <!-- Yield Container -->
-  <div class="yield_container">
-    <%= yield %>
-  </div>
-  <!-- End of Yield Container -->
-
+  </div> <!-- End of site_container div -->
 
 </body>
+
 </html>

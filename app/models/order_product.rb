@@ -13,7 +13,7 @@
 class OrderProduct < ActiveRecord::Base
   attr_accessible :order_id, :product_id, :quantity
 
-  validates :order_id, :presence => true
+  # validates :order_id, :presence => true
   validates :product_id, :presence => true
   validates :quantity, :presence => true
 

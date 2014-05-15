@@ -1,29 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<div class="product_left_panel">
+  <%= link_to 'Back', products_path %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <p>
+    <%= @product.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <%= image_tag @product.image_url %>
+  </p>
+</div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+<div class="product_right_panel">
 
-<p>
-  <strong>Stock:</strong>
-  <%= @product.stock %>
-</p>
+  <% if user_signed_in? %>
+    <%= form_tag("/order_products", method: "post") do %>
+      <%= number_field_tag 'quantity', nil, in: 1...99 %>
+      <%= hidden_field_tag 'product_id', @product.id %>
+      <%= submit_tag "Add cart" %>
+    <% end %>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_product_path(@product) %>
+    <% end %>
+  <% end %>
+
+
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency @product.price %>
+  </p>
+
+  <p>
+    <strong>Stock:</strong>
+    <%= @product.stock %>
+  </p>
+
+</div>
+

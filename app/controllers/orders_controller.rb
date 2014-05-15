@@ -21,6 +21,22 @@ class OrdersController < ApplicationController
   def edit
   end
 
+  def add_to_cart
+    session[:cart] ||= [] # Set up an empty shopping cart if necessary
+
+    session[:cart].push OrderProduct.create( params[:item] )
+  end
+
+  def checkout
+    order = Order.new # Create a new order for this checkout.
+    
+    # Associate each item in the cart with the new order id.
+    # session[:cart].each do |item|
+    #   item.order_id = http://order.id
+    #   item.save
+    end
+  end
+
   # POST /orders
   # POST /orders.json
   def create

@@ -1,0 +1,32 @@
+<h1>Shopping Cart</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Item</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @order_products.each do |order_product| %>
+      <tr>
+        <td>10</td>
+        <td>Shampoo</td>
+        <td>10</td>
+        <td><%= link_to 'Show', order_product %></td>
+        <td><%= link_to 'Remove', order_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Checkout', checkout_path %>
