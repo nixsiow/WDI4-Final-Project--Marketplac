@@ -16,9 +16,9 @@
 
   <% if user_signed_in? %>
     <%= form_tag("/order_products", method: "post") do %>
-      <%= number_field_tag 'quantity', nil, in: 1...99 %>
+      <%= number_field_tag 'quantity', nil, in: 1...99, :required => 'true', :class => 'form-control' %>
       <%= hidden_field_tag 'product_id', @product.id %>
-      <%= submit_tag "Add cart" %>
+      <%= submit_tag "Add to Cart", :class => "btn btn-success btn-block" %>
     <% end %>
 
     <% if current_user.admin? %>

@@ -29,17 +29,14 @@ class OrderProductsController < ApplicationController
   # POST /order_products
   # POST /order_products.json
   def create
-    # @order_product = OrderProduct.new(order_product_params)
-    # binding.pry
     @order_product = OrderProduct.new(:quantity => params[:quantity], :product_id => params[:product_id])
 
     respond_to do |format|
       if @order_product.save
         session[:cart] ||= []
         session[:cart].push @order_product.id
-        # binding.pry
 
-        format.html { redirect_to order_products_path, notice: 'Order product was successfully created.' }
+        format.html { redirect_to order_products_path, notice: 'Item was successfully added to cart.' }
         format.json { render :show, status: :created, location: @order_product }
       else
         format.html { render :new }
@@ -48,17 +45,18 @@ class OrderProductsController < ApplicationController
     end
   end
 
+  # User proceed to payment from here.
   def checkout
     #binding.pry
     @order = Order.create(:user_id => current_user.id) # Create a new order for this checkout.
-    #binding.pry
+    
     # Associate each item in the cart with the new order id.
-    session[:cart].each do |order_item_id|
-      # item.order_id = http://order.id
-      item = OrderProduct.find order_item_id
+    session[:cart].each do |order_product_id|
+      item = OrderProduct.find order_product_id
       item.order_id = @order.id
       item.save
     end
+    # clear the shopping cart at the end
     session[:cart] = []
   end
 

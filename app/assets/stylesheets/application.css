@@ -22,7 +22,7 @@ header {
 }
 
 body {
-  /*background: url('got-wood.jpg') center center fixed;*/
+  background-color: #5c9eef;
   background-size: cover;
 }
 
@@ -37,6 +37,20 @@ body {
 
 .yield_container {
   width: 100%;
+}
+
+.indi_product {
+  display: inline-block;
+  max-width: 280px;
+  border: 1px solid transparent;
+  padding: 15px;
+  margin: 1em;
+  background-color: #efe2d5;
+  border-radius: 5px;
+}
+
+.indi_product img {
+  border-radius: 8px;
 }
 
 .product_left_panel , .product_right_panel {
