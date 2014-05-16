@@ -70,7 +70,7 @@ body {
   min-width: 48%;
 }
 
-.model-dialog {
+#enlarge-modal {
   width: 960px!important;
 }
 

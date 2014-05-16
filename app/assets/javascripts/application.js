@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require underscore
 //= require bootstrap
-//= require turbolinks
 //= require_tree .
 
 
@@ -27,9 +26,11 @@ $(document).ready(function() {
       return false;
   });
 
+
+  // Event listener for 'add to cart' button
   $('.addToCart').on('click', function(event) {
     event.preventDefault();
-    var $quantity = $(this).prev().prev().val();
+    var $quantity = $(this).prev().prev().val(); // FIX THIS. REFACTOR HTML
     var $productID = $(this).closest('.product_right_panel').data('productid');
 
     orderProduct.createOrderProduct($quantity, $productID);
@@ -38,6 +39,7 @@ $(document).ready(function() {
 
   var orderProduct = {
     createOrderProduct: function(quantity, productID) {
+      // debugger;
       $.ajax({
         url: '/order_products',
         type: 'POST',
@@ -49,8 +51,7 @@ $(document).ready(function() {
       }).error(function() {
         // add jquery stuff to show error.
       });
-    },
-    deleteOrderProduct:
+    }
   }
 
 

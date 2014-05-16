@@ -1,53 +1,31 @@
-<!-- Testing on bootstrap modal------------ -->
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" id="model_button" data-toggle="modal" data-target="#myModal<%= product.id %> ">
+<button class="btn btn-primary" id="model_button" data-toggle="modal" data-target="#myModal<%= product.id %> ">
   Details
 </button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog" id="enlarge-modal">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel"><%= product.title %></h4>
       </div>
       <div class="modal-body">
 
         <p id="notice"><%= notice %></p>
 
         <div class="product_left_panel">
-          <%= link_to 'Back', products_path %>
-
-          <p>
-            <%= product.title %>
-          </p>
-
           <p>
             <%= image_tag product.image_url, :class => 'img-responsive' %>
           </p>
         </div>
 
         <div class="product_right_panel" data-productID="<%= product.id %>">
-
-          <!-- AddThis Button BEGIN -->
-          <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-          <a class="addthis_button_preferred_1"></a>
-          <a class="addthis_button_preferred_2"></a>
-          <a class="addthis_button_preferred_3"></a>
-          <a class="addthis_button_preferred_4"></a>
-          <a class="addthis_button_compact"></a>
-          <a class="addthis_counter addthis_bubble_style"></a>
-          </div>
-          <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5374b45d7ee953b2"></script>
-          <!-- AddThis Button END -->
           
-          <br><br><br>
-
           <% if user_signed_in? %>
             <%= form_tag("/order_products", method: "post") do %>
-              <%= select_tag "quantity", options_for_select((1..100).step(1)) %>
+              <%= select_tag "quantity", options_for_select((1..100).step(1)), :class => 'form-control' %>
               <%= hidden_field_tag 'product_id', product.id %>
               <%= submit_tag "Add to Cart", :class => "btn btn-success btn-block addToCart" %>
             <% end %>
@@ -77,4 +55,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> <!-- end of modal -->

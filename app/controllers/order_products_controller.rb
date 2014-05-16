@@ -4,9 +4,9 @@ class OrderProductsController < ApplicationController
   # GET /order_products
   # GET /order_products.json
   def index
-    # binding.pry
     if session[:cart]
       @order_products = OrderProduct.find session[:cart]
+      @total = OrderProduct.total(@order_products)
     else
       @order_products = []
     end
@@ -30,6 +30,7 @@ class OrderProductsController < ApplicationController
   # POST /order_products
   # POST /order_products.json
   def create
+    # binding.pry
     # @order_product = OrderProduct.new(:quantity => params[:quantity], :product_id => params[:product_id])
     @order_product = OrderProduct.create(params[:order_product])
 
