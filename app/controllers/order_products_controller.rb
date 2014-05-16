@@ -4,6 +4,7 @@ class OrderProductsController < ApplicationController
   # GET /order_products
   # GET /order_products.json
   def index
+    # binding.pry
     if session[:cart]
       @order_products = OrderProduct.find session[:cart]
     else
@@ -29,15 +30,18 @@ class OrderProductsController < ApplicationController
   # POST /order_products
   # POST /order_products.json
   def create
-    @order_product = OrderProduct.new(:quantity => params[:quantity], :product_id => params[:product_id])
+    # @order_product = OrderProduct.new(:quantity => params[:quantity], :product_id => params[:product_id])
+    @order_product = OrderProduct.create(params[:order_product])
 
     respond_to do |format|
       if @order_product.save
         session[:cart] ||= []
         session[:cart].push @order_product.id
 
+        output = {'status' => 'Item was successfully added to cart.'}.to_json
+
         format.html { redirect_to order_products_path, notice: 'Item was successfully added to cart.' }
-        format.json { render :show, status: :created, location: @order_product }
+        format.json { render :json => output }
       else
         format.html { render :new }
         format.json { render json: @order_product.errors, status: :unprocessable_entity }
@@ -77,9 +81,12 @@ class OrderProductsController < ApplicationController
   # DELETE /order_products/1
   # DELETE /order_products/1.json
   def destroy
+    # clear the product id in Cart before destroying the orderproduct. Otherwise cause problem when redirect to the index page after that, because no longer can find the same product id again.
+    session[:cart].delete(params[:id].to_i)
+    # Destroy the item and redirect back to the same page.
     @order_product.destroy
     respond_to do |format|
-      format.html { redirect_to order_products_url, notice: 'Order product was successfully destroyed.' }
+      format.html { redirect_to order_products_url, notice: 'You have successfully removed one item from your shopping cart.' }
       format.json { head :no_content }
     end
   end

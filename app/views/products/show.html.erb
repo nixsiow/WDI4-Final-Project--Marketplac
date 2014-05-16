@@ -8,15 +8,30 @@
   </p>
 
   <p>
-    <%= image_tag @product.image_url %>
+    <%= image_tag @product.image_url, :class => 'img-responsive' %>
   </p>
 </div>
 
 <div class="product_right_panel">
 
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_compact"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5374b45d7ee953b2"></script>
+  <!-- AddThis Button END -->
+  
+  <br><br><br>
+
   <% if user_signed_in? %>
     <%= form_tag("/order_products", method: "post") do %>
-      <%= number_field_tag 'quantity', nil, in: 1...99, :required => 'true', :class => 'form-control' %>
+      <%= number_field_tag 'quantity', nil, in: 1...100, :required => 'true', :class => 'form-control text-center', :placeholder => 'quantity - eg: 99',:title => "Please fill up the contact form if you wish to purchase items more than 100pcs, thank you!" %>
       <%= hidden_field_tag 'product_id', @product.id %>
       <%= submit_tag "Add to Cart", :class => "btn btn-success btn-block" %>
     <% end %>

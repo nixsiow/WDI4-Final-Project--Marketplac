@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Marketplac</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1", maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stripe_javascript_tag %>
@@ -27,14 +27,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
+          <li class="active"><a href="#">Ipsum</a></li>
+          <li><a href="#">Ipsum</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lorem <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">ipsum</a></li>
+              <li><a href="#">Another ipsum</a></li>
+              <li><a href="#">yes ipsum again</a></li>
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
               <li class="divider"></li>
@@ -49,12 +49,15 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-
           <% if user_signed_in? %>
-            <li><%= link_to current_user.username, root_path %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              </ul>
+            </li>
+            <li><%= link_to 'Cart', order_products_path %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', data: { confirm: 'Are you sure?' } %></li>
 
             <% if current_user.admin? %>
               <li><%= link_to "Add Product", new_product_path %></li>
@@ -63,21 +66,6 @@
             <li><%= link_to "Sign up", new_user_registration_path %></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
-
-
-
-
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

@@ -1,14 +1,15 @@
-<h1><%= current_user.username %>'s Shopping Cart</h1>
+<%= button_to 'Continue to Shop', root_path, :method => 'get', :class => 'btn btn-info' %>
+<h1 class="lead"><%= current_user.username %>'s Shopping Cart</h1>
 
-<div class="table-responsive">
+<div class="table-responsive text-center">
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Quantity</th>
-        <th>Item</th>
-        <th>Price</th>
-        <th>Subtotal</th>
-        <th></th>
+        <th class="text-center">Quantity</th>
+        <th class="text-center">Product</th>
+        <th class="text-center">Price (AUD)</th>
+        <th class="text-center">Subtotal (AUD)</th>
+        <th class="text-center"></th>
       </tr>
     </thead>
     <tfoot>
@@ -34,6 +35,6 @@
   </table>
 </div>
 
-<%= link_to 'Checkout', checkout_path %><br>
+<%= button_to 'Checkout', checkout_path, :method => 'get', :class => 'btn btn-success', data: { confirm: 'Are you sure?' } %>
 <small>*this will bring you to the payment page.</small><br>
 <small>*shopping cart shall be clear after that, please double check you shopping list.</small><br>
