@@ -49,6 +49,7 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/" class="flash_msg disabled"></a></li>
           <% if user_signed_in? %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <b class="caret"></b></a>
@@ -73,7 +74,7 @@
   <!-- Bootstrap nav bar ending -->
 </header>
 
-<body>
+<body id="header">
   <div class="site_container">
     <!-- Notification / Alert from Devise -->
     <p class="notice"><%= notice %></p>

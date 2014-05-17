@@ -73,13 +73,7 @@ group :test do
   # shoulda-matchers provides Test::Unit- and RSpec-compatible one-liners that test common Rails functionality. 
   gem 'shoulda-matchers'
   gem 'simplecov'   # simplecov gem
-  # gem 'factory_girl_rails'
-  # gem 'faker'
 end
-
-
-
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

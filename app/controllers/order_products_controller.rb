@@ -30,8 +30,6 @@ class OrderProductsController < ApplicationController
   # POST /order_products
   # POST /order_products.json
   def create
-    # binding.pry
-    # @order_product = OrderProduct.new(:quantity => params[:quantity], :product_id => params[:product_id])
     @order_product = OrderProduct.create(params[:order_product])
 
     respond_to do |format|
@@ -52,9 +50,11 @@ class OrderProductsController < ApplicationController
 
   # User proceed to payment from here.
   def checkout
-    #binding.pry
     @order = Order.create(:user_id => current_user.id) # Create a new order for this checkout.
     
+    @updatedPrice = calc_total_price || ''
+
+
     # Associate each item in the cart with the new order id.
     session[:cart].each do |order_product_id|
       item = OrderProduct.find order_product_id
@@ -84,11 +84,16 @@ class OrderProductsController < ApplicationController
   def destroy
     # clear the product id in Cart before destroying the orderproduct. Otherwise cause problem when redirect to the index page after that, because no longer can find the same product id again.
     session[:cart].delete(params[:id].to_i)
+
+    @updatedPrice = calc_total_price || ''
     # Destroy the item and redirect back to the same page.
     @order_product.destroy
+
+    output = {'status' => 'Item was successfully removed from cart.', 'updatedPrice' => @updatedPrice}.to_json
+
     respond_to do |format|
       format.html { redirect_to order_products_url, notice: 'You have successfully removed one item from your shopping cart.' }
-      format.json { head :no_content }
+      format.json { render :json => output }
     end
   end
 

@@ -2,7 +2,7 @@
 <h1 class="lead"><%= current_user.username %>'s Shopping Cart</h1>
 
 <div class="table-responsive text-center">
-  <table class="table table-hover">
+  <table class="table table-hover lead">
     <thead>
       <tr>
         <th class="text-center">Quantity</th>
@@ -14,27 +14,26 @@
     </thead>
     <tfoot>
       <tr>
-        <td>Total</td>
+        <td><b>Total</b></td>
         <td></td>
         <td></td>
-        <td><%= number_to_currency @total %> AUD</td>
-        <td></td>
+        <td><b class="wobble-vertical totalPrice">$<%= @total %>0 AUD</b></td>
+        <td><%= button_to 'Checkout', checkout_path, :method => 'get', :class => 'btn btn-success', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     </tfoot>
     <tbody>
       <% @order_products.each do |order_product| %>
-        <tr>
+        <tr data-productID="<%= order_product.id %>">
           <td><%= order_product.quantity %></td>
           <td><%= order_product.product.title %></td>
           <td><%= number_to_currency order_product.product.price %> AUD</td>
           <td><%= number_to_currency order_product.product.price * order_product.quantity %> AUD</td>
-          <td><%= link_to 'Remove', order_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= button_to 'Remove', order_product, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger removeFromCart' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
 
-<%= button_to 'Checkout', checkout_path, :method => 'get', :class => 'btn btn-success', data: { confirm: 'Are you sure?' } %>
-<small>*this will bring you to the payment page.</small><br>
-<small>*shopping cart shall be clear after that, please double check you shopping list.</small><br>
+<kbd><small>* checkout will bring you to the payment page.</small><br>
+<small>* shopping cart shall be clear after that, please double check you shopping list.</small></kbd><br>
