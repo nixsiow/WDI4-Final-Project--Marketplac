@@ -4,19 +4,21 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    @amount = (calc_total_price * 100).to_i
 
     customer = Stripe::Customer.create(
       :email => 'example@stripe.com',
       :card  => params[:stripeToken]
     )
-
+    
     charge = Stripe::Charge.create(
-      :customer    => customer.id,
+      :customer    => customer.id,  
       :amount      => @amount,
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+    # clear the shopping cart at the end
+    initialize_new_cart
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

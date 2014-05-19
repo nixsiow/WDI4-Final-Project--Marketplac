@@ -137,7 +137,7 @@
         null,
         null,
         null,
-        null,
+        1,
         null,
         null,
         null,
@@ -234,10 +234,10 @@
         null,
         null,
         null,
+        1,
         null,
         null,
-        null,
-        null,
+        1,
         null,
         null,
         null,
@@ -416,6 +416,11 @@
       ],
       "/Users/NixSiow/Projects/wdi-4/05-rails/marketplace/config/routes.rb": [
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
         1,
         null,
         1,
@@ -528,6 +533,10 @@
         1,
         null
       ],
+      "/Users/NixSiow/Projects/wdi-4/05-rails/marketplace/app/helpers/order_products_helper.rb": [
+        1,
+        null
+      ],
       "/Users/NixSiow/Projects/wdi-4/05-rails/marketplace/app/helpers/orders_helper.rb": [
         1,
         null
@@ -558,6 +567,10 @@
         null,
         1,
         1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/NixSiow/Projects/wdi-4/05-rails/marketplace/spec/models/orders_spec.rb": [
@@ -812,6 +825,6 @@
         null
       ]
     },
-    "timestamp": 1400115002
+    "timestamp": 1400458487
   }
 }

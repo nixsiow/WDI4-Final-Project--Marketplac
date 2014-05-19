@@ -1,6 +1,5 @@
-<!-- Button trigger modal -->
 <button class="btn btn-primary" id="model_button" data-toggle="modal" data-target="#myModal<%= product.id %> ">
-  Details
+  See more
 </button>
 
 <!-- Modal -->
@@ -9,7 +8,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title lead" id="myModalLabel"><%= product.title %></h4>
+        <h4 class="modal-title lead text-center" id="myModalLabel"><b><%= product.title %></b></h4>
       </div>
       <div class="modal-body">
 
@@ -22,18 +21,22 @@
         </div>
 
         <div class="product_right_panel" data-productID="<%= product.id %>">
-          
-          <% if user_signed_in? %>
-            <%= form_tag("/order_products", method: "post") do %>
-              <%= select_tag "quantity", options_for_select((1..100).step(1)), :class => 'form-control' %>
-              <%= hidden_field_tag 'product_id', product.id %>
-              <%= submit_tag "Add to Cart", :class => "btn btn-success btn-block addToCart" %>
-            <% end %>
+          <div class="progress-button">
+            <% if user_signed_in? %>
+              <%= form_tag("/order_products", method: "post") do %>
+                <%= select_tag "quantity", options_for_select((1..100).step(1)), :class => 'form-control quantity' %>
+                <%= hidden_field_tag 'product_id', product.id %>
+                <%= submit_tag "Add to Cart", :class => "addToCart" %>
+              <% end %>
 
-            <% if current_user.admin? %>
-              <%= link_to 'Edit', edit_product_path(product) %>
+              <% if current_user.admin? %>
+                <%= link_to 'Edit', edit_product_path(product) %>
+              <% end %>
+
+            <% else %>
+              <p class="lead"><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %><br> and <br>add item to your cart.</p>
             <% end %>
-          <% end %>
+          </div>
 
           <p>
             <strong>Description:</strong>
@@ -55,4 +58,4 @@
       </div>
     </div>
   </div>
-</div> <!-- end of modal -->
+</div>

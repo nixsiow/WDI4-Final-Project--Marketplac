@@ -1,8 +1,9 @@
-<h2>Locked Orders</h2>
+<h1>Checkout Page</h1>
+<h1 class="lead"><b>Proceeding to payment ...</b></h1><hr>
 
 <ul>
   <% @order.products.each do |order| %>
-    <li><%= order.title %></li>
+    <li class="list_item lead"><i class="glyphicon glyphicon-ok text-success"></i> <%= order.title %></li>
   <% end %>
 </ul>
 
@@ -11,7 +12,7 @@
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
-      <span>Total amount: $<%= @updatedPrice %>0</span>
+      <span class="lead">Total Amount:<b> $<%= @updatedPrice %>0 AUD</b></span>
     </label>
   </article>
 

@@ -37,46 +37,65 @@ order12 = admin01.orders.create
 #----------------------------------------------------
 
 # product's seed file
-product01 = Product.create(:title => 'Item01', :price => 10.50, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product01 = Product.create(:title => 'Animal01', :price => 10.50, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product02 = Product.create(:title => 'Item02', :price => 10.90, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 8)
+product02 = Product.create(:title => 'Animal02', :price => 10.90, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 8)
 
-product03 = Product.create(:title => 'Item03', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 88)
+product03 = Product.create(:title => 'Animal03', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 88)
 
-product04 = Product.create(:title => 'Item04', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 14)
+product04 = Product.create(:title => 'Animal04', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 14)
 
-product05 = Product.create(:title => 'Item05', :price => 10.50, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 15)
+product05 = Product.create(:title => 'Animal05', :price => 10.50, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 15)
 
-product06 = Product.create(:title => 'Item06', :price => 10.90, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product06 = Product.create(:title => 'Animal06', :price => 10.90, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product07 = Product.create(:title => 'Item07', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product07 = Product.create(:title => 'Animal07', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product08 = Product.create(:title => 'Item08', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 19)
+product08 = Product.create(:title => 'Animal08', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 19)
 
-product09 = Product.create(:title => 'Item09', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product09 = Product.create(:title => 'Animal09', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product10 = Product.create(:title => 'Item10', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product10 = Product.create(:title => 'Animal10', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product11 = Product.create(:title => 'Item11', :price => 10.50, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product11 = Product.create(:title => 'Animal11', :price => 10.50, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product12 = Product.create(:title => 'Item12', :price => 10.90, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product12 = Product.create(:title => 'Animal12', :price => 10.90, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product13 = Product.create(:title => 'Item13', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product13 = Product.create(:title => 'Animal13', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product14 = Product.create(:title => 'Item14', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product14 = Product.create(:title => 'Animal14', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product15 = Product.create(:title => 'Item15', :price => 10.50, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product15 = Product.create(:title => 'Animal15', :price => 10.50, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product16 = Product.create(:title => 'Item16', :price => 10.90, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 17)
+product16 = Product.create(:title => 'Animal16', :price => 10.90, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 17)
 
-product17 = Product.create(:title => 'Item17', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 10)
+product17 = Product.create(:title => 'Animal17', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
 
-product18 = Product.create(:title => 'Item18', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 55)
+product18 = Product.create(:title => 'Animal18', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 55)
 
-product19 = Product.create(:title => 'Item19', :price => 20.20, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 140)
+product19 = Product.create(:title => 'Animal19', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 140)
 
-product20 = Product.create(:title => 'Item20', :price => 9.80, :description => 'product Lorem ipsum, lorem lorem ipsum', :image_url => 'testingimg.jpeg', :stock => 120)
+product20 = Product.create(:title => 'Animal20', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 120)
 
+product21 = Product.create(:title => 'Animal21', :price => 10.50, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
+
+product22 = Product.create(:title => 'Animal22', :price => 10.90, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
+
+product23 = Product.create(:title => 'Animal23', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
+
+product24 = Product.create(:title => 'Animal24', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
+
+product25 = Product.create(:title => 'Animal25', :price => 10.50, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
+
+product26 = Product.create(:title => 'Animal26', :price => 10.90, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 17)
+
+product27 = Product.create(:title => 'Animal27', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 10)
+
+product28 = Product.create(:title => 'Animal28', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 55)
+
+product29 = Product.create(:title => 'Animal29', :price => 20.20, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 140)
+
+product30 = Product.create(:title => 'Animal30', :price => 9.80, :description => 'Lovely dog', :image_url => 'testingimg.jpeg', :stock => 120)
 #----------------------------------------------------
 
 # order_product's seed file

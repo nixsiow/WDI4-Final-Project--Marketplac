@@ -19,14 +19,6 @@
 
 $(document).ready(function() {
 
-  // to let the dropdown autoshow without clicking
-  $('.dropdown-toggle').click(function() {
-      var location = $(this).attr('href');
-      window.location.href = location;
-      return false;
-  });
-
-
   // Event listener for 'add to cart' button
   $('.addToCart').on('click', function(event) {
     event.preventDefault();
@@ -50,7 +42,6 @@ $(document).ready(function() {
 
     orderProduct.deleteOrderProduct($productID);
   });
-
 
 
   var orderProduct = {

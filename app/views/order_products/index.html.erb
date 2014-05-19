@@ -28,12 +28,12 @@
           <td><%= order_product.product.title %></td>
           <td><%= number_to_currency order_product.product.price %> AUD</td>
           <td><%= number_to_currency order_product.product.price * order_product.quantity %> AUD</td>
-          <td><%= button_to 'Remove', order_product, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger removeFromCart' %></td>
+          <td><%= button_to 'Remove', order_product, method: :delete, :class => 'btn btn-danger removeFromCart' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
 
-<kbd><small>* checkout will bring you to the payment page.</small><br>
-<small>* shopping cart shall be clear after that, please double check you shopping list.</small></kbd><br>
+<small>* checkout will bring you to the payment page.</small><br>
+<small>* shopping cart shall be clear after that, please double check you shopping list.</small><br>
