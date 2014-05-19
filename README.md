@@ -127,6 +127,8 @@ Stripe API for payment gateway
 
 **Mathilda Thompson** - For again helping out with many many questions.
 
+**Simon Taylor** - For many many debugging help!
+
 - - -
 
 ###Bug List or Fixes
