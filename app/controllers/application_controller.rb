@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
 
   def initialize_new_cart
     session[:cart] = []
-    session[:order_id] = []
+    session[:order_id] = nil
   end
 end
