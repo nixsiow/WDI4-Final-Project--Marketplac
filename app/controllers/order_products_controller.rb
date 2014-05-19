@@ -4,7 +4,6 @@ class OrderProductsController < ApplicationController
   # GET /order_products
   # GET /order_products.json
   def index
-    session[:cart] ||= []
     if session[:cart]
       @order_products = OrderProduct.find session[:cart]
       @total = OrderProduct.total(@order_products)
