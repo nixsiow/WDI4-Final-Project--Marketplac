@@ -50,6 +50,7 @@ class OrderProductsController < ApplicationController
 
   # User proceed to payment from here.
   def checkout
+    session[:order_id] = nil
     # Everytime proceed to checkout, first thing to do is to check whether the order id in the session cart{:order_id}, otherwise create a new one
     @order = Order.find session[:order_id] || Order.create(:user_id => current_user.id)
     session[:order_id] = @order.id
