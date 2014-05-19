@@ -17,6 +17,10 @@
 
 @import "bootstrap.css";
 
+.invisible {
+  display: none;
+}
+
 header {
   min-width: 100%;
 }
@@ -62,6 +66,7 @@ body {
 
 .indi_product {
   display: inline-block;
+  cursor: pointer;
   max-width: 275px;
   border: 1px solid transparent;
   padding: 12px;
@@ -92,19 +97,18 @@ body {
 }
 
 #enlarge-modal {
-  width: 960px!important;
+  width: 780px;
 }
+
+/*@media only screen and (min-width : 480px) {
+  #enlarge-modal {
+    width: 600px!important;
+    margin: 30px auto;
+  }
+}*/
 
 .modal-content {
   width: 100%;
-}
-
-/* for nav dropdown list */
-@media only screen and (min-width : 768px) {
-  /* Make Navigation Toggle on Desktop Hover */
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
 }
 
 .disabled {
@@ -120,7 +124,6 @@ body {
   color: #5cb85c!important;
   margin: 0;
 }
-
 
 #scroll-to-top {
   position: fixed;
@@ -168,12 +171,25 @@ hr.style-eight:after {
 .quantity {
   width: 50px;
   display: inline-block;
+  margin-bottom: 10px;
+}
+
+.product_img {
+  margin: auto;
 }
 
 .list_item {
   list-style: none;
 }
 
+.heartbeat {
+  display: inline-block;
+  margin: 15px;
+}
+
+.goRight {
+  float: right;
+}
 
 /* Wobble Vertical */
 
@@ -277,10 +293,11 @@ hr.style-eight:after {
 
 /* Button style */
 .progress-button input {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   padding: 0;
-  width: 200px;
+  margin-left: 8px;
+  width: 185px;
   height: 55px;
   border: 2px solid #1ECD97;
   border-radius: 40px;

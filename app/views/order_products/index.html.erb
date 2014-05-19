@@ -18,7 +18,13 @@
         <td></td>
         <td></td>
         <td><b class="wobble-vertical totalPrice">$<%= @total %>0 AUD</b></td>
-        <td><%= button_to 'Checkout', checkout_path, :method => 'get', :class => 'btn btn-success', data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if @order_products.any? %>
+            <%= button_to 'Checkout', checkout_path, :method => 'get', :class => 'btn btn-success', data: { confirm: 'Are you sure?' } %>
+          <% else %>
+            <%= button_to 'Back to shop', root_path, :method => 'get', :class => 'btn btn-success' %>
+          <% end %>
+        </td>
       </tr>
     </tfoot>
     <tbody>
@@ -35,5 +41,4 @@
   </table>
 </div>
 
-<small>* checkout will bring you to the payment page.</small><br>
-<small>* shopping cart shall be clear after that, please double check you shopping list.</small><br>
+<small>* checkout will bring you to the payment page.</small>

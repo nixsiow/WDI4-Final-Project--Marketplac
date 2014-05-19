@@ -1,11 +1,15 @@
-<h1>Checkout Page</h1>
-<h1 class="lead"><b>Proceeding to payment ...</b></h1><hr>
+<div class="timer">
+    Loading...
+</div>
+<span class="lead"><b>  Checkout Page</b></span>
+<h4>Proceeding to payment ...</h4><hr>
 
 <ul>
   <% @order.products.each do |order| %>
     <li class="list_item lead"><i class="glyphicon glyphicon-ok text-success"></i> <%= order.title %></li>
   <% end %>
 </ul>
+<hr>
 
 
 <!-- for stripe -->

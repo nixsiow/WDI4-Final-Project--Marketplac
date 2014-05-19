@@ -41,9 +41,10 @@
   <% @products.each do |product| %>
     <div class="indi_product">
       <%= image_tag product.image_url %>
-      <small><%= product.title %></small>
-      <small><%= number_to_currency product.price %> AUD</small><br>
+      <small><b><%= product.title %></b></small>
+      <small class="goRight"><b><%= number_to_currency product.price %> AUD</b></small><br>
       <%= render :partial => 'product_info', :locals => {product:product} %>
+
     </div>
   <% end %>
 </div>

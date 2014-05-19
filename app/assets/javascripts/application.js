@@ -31,12 +31,6 @@ $(document).ready(function() {
   // Event listener for 'Remove' item from Cart
   $('.removeFromCart').on('click', function(event) {
     event.preventDefault();
-
-    //get the total price of all product from data-attribute
-    // var $totalPrice = $(this).closest(".datas").data().totalprice;
-    //get the total price of individual product from data-attribute
-    // var $price = $(this).closest("tr").data().price;
-    // console.log($price);
     //get the productID of individual product from data-attribute
     var $productID = $(this).closest("tr").data().productid;
 
@@ -73,8 +67,6 @@ $(document).ready(function() {
       }).done(function(data) {
         $('body').find("[data-productID='" + productID + "']").fadeOut();
         $('.flash_msg').text(data.status).toggleClass('wobble-vertical');
-        // update the data attribute as well, so that the calculation on backend will work
-        // $('.datas').data('totalprice', data.updatedPrice);
         //redraw the total price on screen so that it will update instantly whenever item removed from cart
         $('.totalPrice').html('<b>$' + data.updatedPrice + '0 AUD</b>');
 
@@ -84,5 +76,10 @@ $(document).ready(function() {
     }
   } // End of the object
 
+
+  // trigger the 'see more' button when user click on the image
+  $('.site_container').on('click', '.indi_product img', function () {
+    $(this).closest('.indi_product').find('.btn-primary').trigger('click');
+  });
 
 }); // end of document.ready

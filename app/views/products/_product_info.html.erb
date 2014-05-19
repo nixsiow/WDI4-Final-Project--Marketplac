@@ -1,4 +1,4 @@
-<button class="btn btn-primary" id="model_button" data-toggle="modal" data-target="#myModal<%= product.id %> ">
+<button class="btn btn-primary invisible" id="model_button" data-toggle="modal" data-target="#myModal<%= product.id %> ">
   See more
 </button>
 
@@ -12,11 +12,9 @@
       </div>
       <div class="modal-body">
 
-        <p id="notice" class="lead"><%= notice %></p>
-
         <div class="product_left_panel">
           <p>
-            <%= image_tag product.image_url, :class => 'img-responsive' %>
+            <%= image_tag product.image_url, :class => 'img-responsive product_img' %>
           </p>
         </div>
 
@@ -38,17 +36,17 @@
             <% end %>
           </div>
 
-          <p>
+          <p class="lead">
             <strong>Description:</strong>
             <%= product.description %>
           </p>
 
-          <p>
+          <p class="lead">
             <strong>Price:</strong>
             <%= number_to_currency product.price %> AUD
           </p>
 
-          <p>
+          <p class="lead">
             <strong>Stock:</strong>
             <%= product.stock %>
           </p>
