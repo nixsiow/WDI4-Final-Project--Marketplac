@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: marketplace_production
-  username: marketplace
-  password: <%= ENV['MARKETPLACE_DATABASE_PASSWORD'] %>
+  # username: marketplace
+  # password: <%= ENV['MARKETPLACE_DATABASE_PASSWORD'] %>
