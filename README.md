@@ -1,6 +1,6 @@
 #Marketplac App
 
-* [Marketplac on Heroku](http://shrouded-thicket-7595.herokuapp.com/)
+* [Marketplac on Heroku](http://marketplac.herokuapp.com/)
 * [Marketplac on GitHub](https://github.com/nixsiow/WDI4-Final-Project--Marketplace)
 
 - - -
