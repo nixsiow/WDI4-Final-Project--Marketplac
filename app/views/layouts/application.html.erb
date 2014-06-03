@@ -24,7 +24,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand colorize" href="/">Marketplac</a>
+        <a class="navbar-brand colorize" href="/">Market<i class="italicise">Plac</i></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,7 +36,8 @@
           <button type="submit" class="btn btn-info">Search</button>
         </form>
         <ul class="nav navbar-nav">
-          <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">About</a></li>
+          <li><a href="#" data-toggle="modal" data-target=".bs-about-modal-lg">About</a></li>
+          <li><a href="#" data-toggle="modal" data-target=".bs-contact-modal-lg">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/" class="flash_msg disabled notice alert"><%= notice %><%= alert %></a></li>
@@ -72,16 +73,29 @@
   </div> <!-- End of site_container div -->
 
 <!-- For the About's modal -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bs-about-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content about-container">
       <h2 class="text-center lead"><b>About</b></h2>
-      <img class="about-img" src="/images/WDI4.jpg" alt="">
-      <p class="lead about-content">Sharknado 2 you go Glenn Coco he's fucking my sister I judge you all so hard let's have morning tea now I'll give you my front-end mojo if you give me your back-end mojo kitkat chunky cookies and cream Coffee?! relationships your morning exercise is on HipChat yeah man Did you just call me fat?! How you doin infinite loop Chico bad hair day predictor let's have a mating party I'll send you the link on HipChat I'm a genius BEERS apparently I smell like snails have the best time seriously GA Harpo it's twelve o'clock I would be God.. It would be party in heaven i love guns Did you send me your homework guys? is it beer o'clock yet? I fucking hate the BeeGees butterflies craigsy Avalanche sharks more styling mkdir don't forget to pull before you push WDI gang sign the beer fridge is locked fart baguette debugging ukuleles cool beans oreo cupcake jonesy I hate suits Groucho What's the symbol for a symbol? Idiots.gif Have you seen my face? Do I have a face? blurb I'm gonna touch a file I love styling in theory come on Bessy see you along! computers!.</p>
+      <!-- <img class="about-img" src="/images/WDI4.jpg" alt=""> -->
+      <p class="lead about-content">Market<i class="italicise">Plac</i> is a ecommerce site that literally look good!</p>
     </div>
   </div>
 </div> <!-- End the About's modal -->
 
+
+<!-- For the Contact's modal -->
+<div class="modal fade bs-contact-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content about-container">
+      <h2 class="text-center lead"><b>Contact</b></h2>
+      <!-- <img class="about-img" src="/images/WDI4.jpg" alt=""> -->
+      <p class="lead contact-content">Contact me</p>
+    </div>
+  </div>
+</div> <!-- End the Contact's modal -->
+
+<a href="#header" class="scrollToTop" style="display: inline;"><span>Jump to top</span></a>
 </body>
 
 </html>

@@ -45,7 +45,12 @@ $(document).ready(function() {
         url: '/order_products',
         type: 'POST',
         dataType: 'json',
-        data: {order_product: {product_id: productID, quantity: quantity }}
+        data: {
+          order_product: {
+            product_id: productID,
+            quantity: quantity
+          }
+        }
 
       }).done(function(data) {
         $('#myModal' + productID).modal('hide');
@@ -62,7 +67,11 @@ $(document).ready(function() {
         url: '/order_products/' + productID,
         type: 'DELETE',
         dataType: 'json',
-        data: {order_product: {product_id: productID}}
+        data: {
+          order_product: {
+            product_id: productID
+          }
+        }
 
       }).done(function(data) {
         $('body').find("[data-productID='" + productID + "']").fadeOut();
@@ -78,8 +87,30 @@ $(document).ready(function() {
 
 
   // trigger the 'see more' button when user click on the image
-  $('.site_container').on('click', '.indi_product img', function () {
+  $('.site_container').on('click', '.indi_product img', function() {
     $(this).closest('.indi_product').find('.btn-primary').trigger('click');
+  });
+
+
+  // ------------------------
+  // For Jump to Top button
+  // ------------------------
+
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 200) {
+      $('.scrollToTop').fadeIn();
+    } else {
+      $('.scrollToTop').fadeOut();
+    }
+  });
+
+  //Click event to scroll to top
+  $('.scrollToTop').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
   });
 
 }); // end of document.ready
