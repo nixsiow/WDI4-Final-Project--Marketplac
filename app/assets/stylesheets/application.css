@@ -121,6 +121,7 @@ body {
   font-weight: bold;
   border-radius: 3px;
   z-index: 9;
+  cursor: pointer;
 }
 .about-container {
   padding: 30px;
