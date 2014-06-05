@@ -1,7 +1,7 @@
 #Marketplac App
 
 * [Marketplac on Heroku](http://marketplac.herokuapp.com/)
-* [Marketplac on GitHub](https://github.com/nixsiow/WDI4-Final-Project--Marketplace)
+* [Marketplac on GitHub](http://github.com/nixsiow/WDI4-Final-Project--Marketplac)
 
 - - -
 
